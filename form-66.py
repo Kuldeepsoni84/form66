@@ -1,4 +1,5 @@
 import pandas as pd
+
 import csv
 import format_file
 df=pd.read_csv('dummy.csv')
@@ -54,7 +55,7 @@ for line in range(0,len(w),10):
     #format_file.middle(file,total_stu,absent_stu,present_stu)
     file.write('\n')
     file.write('|'+'-'*141+'|')
-    if len(w)-line<10:
+    if len(w)-line<=10:
         format_file.middle(file,total_stu,absent_stu,present_stu)
     format_file.footer(file)
     file.write('\n\n')
