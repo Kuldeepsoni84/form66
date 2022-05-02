@@ -16,9 +16,9 @@ def l_len(reg_stu,b_stu):
     else:
         return len(reg_stu)-len(ab_stu)+1
 w=format_file.series(f,absent_stu)
-for line in range(0,len(w),10):
-    format_file.header(file,line//10+1)
-    for i in range(line,line+10):
+for line in range(0,len(w),20):
+    format_file.header(file,line//20+1)
+    for i in range(line,line+20):
         if i<len(w):
             mask=(df['roll']>=int(w[i][0]))&(df['roll']<=int(w[i][-1]) )
             x=df.loc[mask]
@@ -55,7 +55,7 @@ for line in range(0,len(w),10):
     #format_file.middle(file,total_stu,absent_stu,present_stu)
     file.write('\n')
     file.write('|'+'-'*141+'|')
-    if len(w)-line<=10:
+    if len(w)-line<=20:
         format_file.middle(file,total_stu,absent_stu,present_stu)
     format_file.footer(file)
     file.write('\n\n')
